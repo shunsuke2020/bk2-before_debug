@@ -1,0 +1,25 @@
+
+<div class="box2">
+
+<h1>Editing Book</h1>
+<%= form_for(@book, url: book_path(@book.id)) do |f| %>
+
+    <h4>Title</h4>
+    <%= f.text_field :title,class:"col-xs-12" %>
+    <h4>Opinion</h4>
+
+    <%= f.text_area :body,class:"col-xs-12" %>
+
+  <nav>
+     <%= f.submit 'Update Book',class: "col-xs-12 btn btn-primary" %>
+  </nav>
+　<% end %>
+
+<%= link_to "Show",book_path(@book.id)%>
+<%= link_to "Back",books_path %>
+
+</div>
+
+
+
+

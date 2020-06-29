@@ -1,0 +1,76 @@
+<div class="box">
+
+<div class= "container">
+  <div class= "row">
+
+<div class= "col-xs-3">
+  <h2>User info</h2>
+  <%= attachment_image_tag @user, :profile_image, :fill, 100, 100, fallback: "no_image.jpg" ,format: 'no_image.jpg' %>
+
+  <h5>name</h5>
+  <%= @user.name %>
+  <h5>introduction</h5>
+  <%= @user.introduction %>
+  <%= link_to"",edit_user_path(current_user.id), class: "col-xs-12 btn btn-default glyphicon glyphicon-wrench"%>
+
+       <!-- form_for部分 -->
+  <%= form_for(@book,  url: books_path) do |f| %>
+
+
+        <h2>New book</h2>
+        <h4>Title</h4>
+        <%= f.text_field :title,class: "col-xs-12" %>
+
+        <h4>Opinion</h4>
+        <%= f.text_field :body,class: "col-xs-12" %>
+        <nav>
+
+        <%= f.submit 'Create Book',class: "col-xs-12 btn btn-primary" %>
+        </nav>
+        <% end %>
+  </div>
+
+  <div class= "col-xs-9">
+    <h2>Users</h2>
+    <table class='table'>
+
+    <% @users.each do |user| %>
+    <tr>
+    <td><%= attachment_image_tag user, :profile_image, :fill, 20, 20, fallback: "no_image.jpg",size:'20x20',format: 'no_image.jpg' %></td>
+   <th><%= user.name %><th>
+   <th><%= link_to"Show",user_path(user.id) %></th>
+   </tr>
+   <% end %>
+   </table>
+  </div>
+
+  </div>
+  </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
