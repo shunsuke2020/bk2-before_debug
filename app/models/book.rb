@@ -7,5 +7,4 @@ class Book < ApplicationRecord
 	                 
 	                 
 
-	
 end
