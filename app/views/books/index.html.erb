@@ -2,7 +2,12 @@
  <% if @book.errors %>
    <ul>
 <% @book.errors.full_messages.each do |message| %>
-      <li><%= message %></li>
+      <li>
+       <%= message %>
+      </li>
+      <li>
+       <%= link_to "#{book.book_comments.count} コメント", book_path(book.id) %>
+      </li>
        <% end %>
         </ul>
       <% end %>

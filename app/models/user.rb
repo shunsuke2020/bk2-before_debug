@@ -5,6 +5,8 @@ class User < ApplicationRecord
         :recoverable, :rememberable, :trackable, :validatable
 
    has_many  :books, dependent: :destroy
+   has_many :book_comments, dependent: :destroy
+   has_many :favorites, dependent: :destroy
 
    validates :name, presence: true,length: {in: 2..20}
    validates :introduction,length: { maximum: 50}
@@ -17,8 +19,7 @@ class User < ApplicationRecord
   def email_changed?
    false
   end
-
-
+ 
 end
 
 
